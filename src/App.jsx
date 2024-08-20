@@ -10,7 +10,6 @@ function App() {
 
   useEffect(() => {
     console.log(cartItems)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [desserts, cartItems])
 
   return (

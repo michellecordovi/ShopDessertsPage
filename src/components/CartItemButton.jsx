@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function CartItemButton({setIsInCart, isInCart, desserts, index, cartItems, setCartItems, itemCount, setItemCount}){
+function CartItemButton({index, setCartItems, itemCount, setItemCount}){
     function handleDecrement(){
         setItemCount(itemCount - 1)
 

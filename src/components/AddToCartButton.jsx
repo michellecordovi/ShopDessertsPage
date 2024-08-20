@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function AddToCartButton({setIsInCart, isInCart, desserts, index, cartItems, setCartItems, itemCount, setItemCount}){
+function AddToCartButton({setIsInCart, isInCart, index, setCartItems, itemCount, setItemCount}){
     function handleClick(){
         if(!isInCart){
             setIsInCart(true);
