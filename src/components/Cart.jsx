@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
 import EmptyCartImage from "./EmptyCartImage";
+import ActiveCart from "./ActiveCart";
 
-function Cart(){
+function Cart({desserts, cartItems, setCartItems}){
     return (
         <aside id="cart">
-            <h2>Your Cart(0)</h2>
-            <EmptyCartImage/>
+            <h2>Your Cart({cartItems.length})</h2>
+            {cartItems.length === 0 ? <EmptyCartImage/> : <ActiveCart desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} />}
         </aside>
     )
 }

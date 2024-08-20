@@ -1,11 +1,31 @@
-function ActiveCart(){
+/* eslint-disable react/prop-types */
+import CartItemsGrid from "./CartItemsGrid";
+
+function ActiveCart({desserts, cartItems}){
+    function calculateTotal(){
+        const priceArray = cartItems.map(index => {
+            return desserts[index].price;
+        })
+
+        const total = priceArray.reduce((acc, val) => acc + val)
+
+        return total;
+    }
+
     return (
         <div id="active-cart">
-            <div id="cart-grid"></div>
 
-            <div id="order-total"></div>
+            <CartItemsGrid/>
 
-            <img src="./assets/images/icon-carbon-neutral.svg" alt="This is a carbon-neutral delivery" />
+            <div id="order-total">
+                <p>Order Total</p>
+                <h2>{calculateTotal()}</h2>
+            </div>
+
+            <div id="carbon-neutral-label">
+                <img src="./assets/images/icon-carbon-neutral.svg" alt="This is a carbon-neutral delivery" />
+                <p id="carbon-neutral-statement">This is a carbon-neutral delivery</p>
+            </div>
 
             <button id="confirm-order-button">Confirm Order</button>
         </div>

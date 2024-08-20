@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <DessertGrid desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} />
-      <Cart/>
+      <Cart desserts={desserts} cartItems={cartItems} setCartItems={setCartItems}/>
     </>
   )
 }
