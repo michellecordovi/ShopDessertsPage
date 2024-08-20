@@ -30,3 +30,17 @@
   position: relative;
   bottom: 22px;
 }
+
+/* CART */
+#empty-cart-image-container{
+  padding: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 128px;
+  }
+}
