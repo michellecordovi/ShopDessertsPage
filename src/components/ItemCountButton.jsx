@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 function ItemCountButton({index, setCartItems, itemCount, setItemCount}){
+    
     function handleDecrement(){
         setItemCount(itemCount - 1)
 

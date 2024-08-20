@@ -11,7 +11,12 @@ function DessertCard({index, src, name, category, price, desserts, cartItems, se
         if(itemCount === 0){
             setIsInCart(false)
         }
-    }, [itemCount])
+
+        if(cartItems.includes(index) === false){
+            setItemCount(0)
+        }
+
+    }, [itemCount, cartItems])
 
     return (
         <div className="dessert-card">
