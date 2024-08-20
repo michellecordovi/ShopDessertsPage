@@ -1,6 +1,7 @@
 import './App.css'
 import {useState, useEffect} from 'react'
 import data from '../data.json'
+import DessertGrid from './components/DessertGrid'
 
 function App() {
   const [desserts] = useState(data)
@@ -9,7 +10,11 @@ function App() {
     console.log(desserts)
   }, [desserts])
 
-  return <p>HELLO</p>
+  return (
+    <>
+      <DessertGrid desserts={desserts}/>
+    </>
+  )
 }
 
 export default App
