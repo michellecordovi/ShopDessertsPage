@@ -6,14 +6,16 @@ import Cart from './components/Cart'
 
 function App() {
   const [desserts] = useState(data)
+  const [cartItems, setCartItems] = useState([])
 
   useEffect(() => {
-    console.log(desserts)
-  }, [desserts])
+    console.log(cartItems)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [desserts, cartItems])
 
   return (
     <>
-      <DessertGrid desserts={desserts}/>
+      <DessertGrid desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} />
       <Cart/>
     </>
   )

@@ -1,12 +1,26 @@
 /* eslint-disable react/prop-types */
 import AddToCartButton from "./AddToCartButton";
+import {useState, useEffect} from 'react'
+import CartItemButton from "./CartItemButton";
 
-function DessertCard({src, name, category, price}) {
+function DessertCard({index, src, name, category, price, desserts, cartItems, setCartItems}) {
+    const [isInCart, setIsInCart] = useState(false)
+    const [itemCount, setItemCount]= useState(0)
+
+    useEffect( () => {
+        if(itemCount === 0){
+            setIsInCart(false)
+        }
+    }, [itemCount])
+
     return (
         <div className="dessert-card">
             <div className="dessert-image-container">
                 <img className="dessert-image" src={src} alt={name} />
-                <AddToCartButton/>
+                {!isInCart ? <AddToCartButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount} />
+                : <CartItemButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount}  />  }
+                
+                
             </div>
 
             <div className="dessert-description">

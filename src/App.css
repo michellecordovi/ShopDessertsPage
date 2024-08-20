@@ -5,6 +5,8 @@
   column-gap: 24px;
 }
 
+
+/* DESSERT CARD */
 .dessert-image-container{
   display: flex;
   flex-direction: column;
@@ -17,18 +19,35 @@
   border-radius: 8px;
 }
 
-.add-to-cart-button{
+.add-to-cart-button,
+.adjust-count-button {
   width: 160px;
   height: 44px;
   padding: 22px;
-  background-color: white;
-  border: 1px solid #AD8A85;
   display: flex;
   align-items: center;
-  justify-content: center;
   border-radius: 999px;
   position: relative;
   bottom: 22px;
+  cursor: pointer;
+}
+
+
+.add-to-cart-button{
+  background-color: white;
+  border: 1px solid #AD8A85;
+  justify-content: center;
+}
+
+.adjust-count-button{
+  background-color: #C73B0F;
+  justify-content: space-between;
+  border: none;
+  color: white;
+
+  img{
+    cursor: pointer;
+  }
 }
 
 /* CART */
