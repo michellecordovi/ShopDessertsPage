@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import AddToCartButton from "./AddToCartButton";
 import {useState, useEffect} from 'react'
-import CartItemButton from "./CartItemButton";
+import ItemCountButton from "./ItemCountButton";
 
 function DessertCard({index, src, name, category, price, desserts, cartItems, setCartItems}) {
     const [isInCart, setIsInCart] = useState(false)
@@ -18,7 +18,7 @@ function DessertCard({index, src, name, category, price, desserts, cartItems, se
             <div className="dessert-image-container">
                 <img className="dessert-image" src={src} alt={name} />
                 {!isInCart ? <AddToCartButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount} />
-                : <CartItemButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount}  />  }
+                : <ItemCountButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount}  />  }
                 
                 
             </div>

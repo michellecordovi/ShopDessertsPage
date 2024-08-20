@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function CartItemButton({index, setCartItems, itemCount, setItemCount}){
+function ItemCountButton({index, setCartItems, itemCount, setItemCount}){
     function handleDecrement(){
         setItemCount(itemCount - 1)
 
@@ -32,4 +32,4 @@ function CartItemButton({index, setCartItems, itemCount, setItemCount}){
         </button>
     )
 }
-export default CartItemButton;
+export default ItemCountButton;
