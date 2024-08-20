@@ -3,7 +3,7 @@ function DessertCard({src, name, category, price}) {
     return (
         <div className="dessert-card">
             <div className="dessert-image-container">
-                <img src={src} alt={name} />
+                <img className="dessert-image" src={src} alt={name} />
             </div>
 
             <div className="dessert-description">
