@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import CartItemsGrid from "./CartItemsGrid";
 
-function ActiveCart({desserts, cartItems, setCartItems}){
+function ActiveCart({desserts, cartItems, setCartItems, uniqueItems}){
 
     ///calculates the total value for your order based on cartItems array
     function calculateTotal(){
@@ -17,7 +17,7 @@ function ActiveCart({desserts, cartItems, setCartItems}){
     return (
         <div id="active-cart">
 
-            <CartItemsGrid desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} />
+            <CartItemsGrid desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} uniqueItems = {uniqueItems} />
 
             <div id="order-total">
                 <p>Order Total</p>
