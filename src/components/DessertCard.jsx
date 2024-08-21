@@ -16,7 +16,7 @@ function DessertCard({index, src, name, category, price, desserts, cartItems, se
             setItemCount(0)
         }
 
-    }, [itemCount, cartItems])
+    }, [itemCount, cartItems, index])
 
     return (
         <div className="dessert-card">
