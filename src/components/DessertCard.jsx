@@ -31,7 +31,7 @@ function DessertCard({index, src, name, category, price, desserts, cartItems, se
             <div className="dessert-description">
                 <p className="dessert-category">{category}</p>
                 <p className="dessert-name">{name}</p>
-                <p className="dessert-price">{price}</p>
+                <p className="dessert-price">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)}</p>
             </div>
         </div>
     )

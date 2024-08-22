@@ -21,7 +21,7 @@ function ConfirmationGrid({desserts, uniqueItems, total}){
 
             <div id="confirmation-order-total">
                 <p>Order Total</p>
-                <h2>${total}</h2>
+                <h2>{total}</h2>
             </div>
         </div>
     )

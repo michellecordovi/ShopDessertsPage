@@ -19,9 +19,15 @@ function App() {
           return desserts[index].price;
       })
 
-      const totalPrice = priceArray.reduce((acc, val) => acc + val)
+      const totalPrice = priceArray.reduce((acc, val) => acc + val);
 
-      setTotal(totalPrice)
+      function convertToUsd(num){
+        const options = { style: 'currency', currency: 'USD' };
+        const numberFormat = new Intl.NumberFormat('en-US', options)
+        return numberFormat.format(num)
+      }
+
+      setTotal(convertToUsd(totalPrice))
     }
 
     if(cartItems.length > 0 ){

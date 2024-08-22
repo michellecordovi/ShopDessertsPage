@@ -11,8 +11,9 @@ function CartItem({ desserts, price, name, count, cartItems, setCartItems}) {
         <div className="cart-item">
             <div className="cart-item-info">
                 <p>{name}</p>
-                <p>@{price}</p>
-                <p>Quantity: {count}</p>
+                <span>{count}x</span>
+                <span>@ {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)}</span>
+                <span>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(count * price)}</span>
             </div>
 
             <button className="remove-cart-item-button" onClick={handleClick}>
