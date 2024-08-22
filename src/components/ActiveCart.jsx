@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import CartItemsGrid from "./CartItemsGrid";
 
-function ActiveCart({desserts, cartItems, setCartItems, uniqueItems}){
-
+function ActiveCart({desserts, cartItems, setCartItems, uniqueItems, setModalIsVisible}){
     ///calculates the total value for your order based on cartItems array
     function calculateTotal(){
         const priceArray = cartItems.map(index => {
@@ -12,6 +11,11 @@ function ActiveCart({desserts, cartItems, setCartItems, uniqueItems}){
         const total = priceArray.reduce((acc, val) => acc + val)
 
         return total;
+    }
+
+    //handles click for confirm order button
+    function handleConfirmOrder(){
+        setModalIsVisible(true)
     }
 
     return (
@@ -29,7 +33,7 @@ function ActiveCart({desserts, cartItems, setCartItems, uniqueItems}){
                 <p id="carbon-neutral-statement">This is a <span>carbon-neutral</span> delivery</p>
             </div>
 
-            <button id="confirm-order-button">Confirm Order</button>
+            <button id="confirm-order-button" onClick={handleConfirmOrder}>Confirm Order</button>
         </div>
     )
 }

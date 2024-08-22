@@ -10,6 +10,7 @@ body{
   background-color: #FCF8F6;
   color: #260F08;
   padding: 88px;
+  position: relative;
 }
 
 #root{

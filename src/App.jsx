@@ -3,13 +3,13 @@ import {useState, useEffect} from 'react'
 import data from '../data.json'
 import DessertGrid from './components/DessertGrid'
 import Cart from './components/Cart'
+import OrderConfirmedModal from './components/OrderConfirmedModal'
 
 function App() {
   const [desserts] = useState(data)
   const [cartItems, setCartItems] = useState([])
   const [uniqueItems, setUniqueItems] = useState([])
-
-  
+  const [modalIsVisible, setModalIsVisible]= useState(false)
 
   useEffect(() => {
     //creates array of unique cart items
@@ -30,7 +30,8 @@ function App() {
   return (
     <>
       <DessertGrid desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} />
-      <Cart desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} uniqueItems = {uniqueItems} setUniqueItems={setUniqueItems} />
+      <Cart desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} uniqueItems = {uniqueItems} setModalIsVisible={setModalIsVisible} />
+      <OrderConfirmedModal desserts={desserts} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible} />
     </>
   )
 }
