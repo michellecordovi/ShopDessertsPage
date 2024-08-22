@@ -10,8 +10,24 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [uniqueItems, setUniqueItems] = useState([])
   const [modalIsVisible, setModalIsVisible]= useState(false)
+  const [total, setTotal] = useState(0)
 
   useEffect(() => {
+    ///calculates the total value for your order based on cartItems array
+    function calculateTotal(){
+      const priceArray = cartItems.map(index => {
+          return desserts[index].price;
+      })
+
+      const totalPrice = priceArray.reduce((acc, val) => acc + val)
+
+      setTotal(totalPrice)
+    }
+
+    if(cartItems.length > 0 ){
+      calculateTotal()
+    }
+
     //creates array of unique cart items
     const uniqueItemsMap = cartItems.reduce((acc, item) => {
         const itemName = desserts[item].name;
@@ -30,8 +46,8 @@ function App() {
   return (
     <>
       <DessertGrid desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} />
-      <Cart desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} uniqueItems = {uniqueItems} setModalIsVisible={setModalIsVisible} />
-      <OrderConfirmedModal desserts={desserts} uniqueItems={uniqueItems} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible} setCartItems={setCartItems} />
+      <Cart desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} uniqueItems = {uniqueItems} setModalIsVisible={setModalIsVisible} total={total} />
+      <OrderConfirmedModal desserts={desserts} uniqueItems={uniqueItems} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible} setCartItems={setCartItems} total={total} />
     </>
   )
 }

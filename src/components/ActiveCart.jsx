@@ -1,18 +1,7 @@
 /* eslint-disable react/prop-types */
 import CartItemsGrid from "./CartItemsGrid";
 
-function ActiveCart({desserts, cartItems, setCartItems, uniqueItems, setModalIsVisible}){
-    ///calculates the total value for your order based on cartItems array
-    function calculateTotal(){
-        const priceArray = cartItems.map(index => {
-            return desserts[index].price;
-        })
-
-        const total = priceArray.reduce((acc, val) => acc + val)
-
-        return total;
-    }
-
+function ActiveCart({desserts, cartItems, setCartItems, uniqueItems, setModalIsVisible, total}){
     //handles click for confirm order button
     function handleConfirmOrder(){
         setModalIsVisible(true)
@@ -25,7 +14,7 @@ function ActiveCart({desserts, cartItems, setCartItems, uniqueItems, setModalIsV
 
             <div id="order-total">
                 <p>Order Total</p>
-                <h2>${calculateTotal()}</h2>
+                <h2>${total}</h2>
             </div>
 
             <div id="carbon-neutral-label">

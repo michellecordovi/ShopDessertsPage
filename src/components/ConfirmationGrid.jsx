@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import ConfirmationItem from './ConfirmationItem'
 
-function ConfirmationGrid({desserts, uniqueItems}){
+function ConfirmationGrid({desserts, uniqueItems, total}){
 
     return (
         <div id="order-confirmation-grid">
@@ -21,7 +21,7 @@ function ConfirmationGrid({desserts, uniqueItems}){
 
             <div id="confirmation-order-total">
                 <p>Order Total</p>
-                <h2>$</h2>
+                <h2>${total}</h2>
             </div>
         </div>
     )

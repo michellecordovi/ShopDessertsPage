@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import ConfirmationGrid from "./ConfirmationGrid";
 
-function OrderConfirmedModal({desserts, uniqueItems, modalIsVisible, setModalIsVisible, setCartItems}) {
+function OrderConfirmedModal({desserts, uniqueItems, modalIsVisible, setModalIsVisible, setCartItems, total}) {
     function handleStartNewOrder(){
         setModalIsVisible(false)
         setCartItems([])
@@ -18,7 +18,7 @@ function OrderConfirmedModal({desserts, uniqueItems, modalIsVisible, setModalIsV
                     <p>We hope you enjoy your food!</p>
                 </div>
 
-                <ConfirmationGrid  desserts={desserts} uniqueItems={uniqueItems}/>
+                <ConfirmationGrid  desserts={desserts} uniqueItems={uniqueItems} total={total}/>
 
                 <button id="start-new-order-button" onClick={handleStartNewOrder}>Start New Order</button>
             </div>
