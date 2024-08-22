@@ -125,6 +125,7 @@
   border: none;
   background-color: #C73B0F;
   color: white;
+  cursor: pointer;
 }
 
 
@@ -168,4 +169,39 @@
 
 .not-visible{
   display: none;
+}
+
+
+/* CONFIRMATION GRID */
+#order-confirmation-grid{
+  background-color: #FCF8F6;
+  border-radius: 8px;
+  padding: 8px 24px 24px;
+}
+
+#confirmation-order-total{
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*  CONFIRMED ITEM */
+.confirmed-item{
+  width: 100%;
+  padding: 16px 0px;
+  border-bottom: 1px solid #F5EEEC;
+  display: flex;
+}
+
+.confirmed-item-info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmed-item img{
+  width: 48px;
+  margin-right: 16px;
 }

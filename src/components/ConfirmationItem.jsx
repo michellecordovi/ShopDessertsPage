@@ -1,11 +1,17 @@
 /* eslint-disable react/prop-types */
-function ConfirmationItem({ desserts, price, name, count}){
+function ConfirmationItem({ desserts, index, price, name, count}){
     return (
         <div className="confirmed-item">
-            <div className="cart-item-info">
-                <p>{name}</p>
-                <p>@{price}</p>
-                <p>Quantity: {count}</p>
+            <img src={desserts[index].image.thumbnail}/>
+
+            <div className="confirmed-item-info">
+                <div className="confirmed-item-name-block">
+                    <p>{name}</p>
+                    <span>{count}x</span>
+                    <span>@ ${price}</span>
+                </div>
+
+                <div className="confirmed-item-price">${count * price}</div>
             </div>
         </div>
     )
