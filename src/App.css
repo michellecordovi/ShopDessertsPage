@@ -161,3 +161,11 @@
   position: relative;
   z-index: 2;
 }
+
+.visible{
+  display: flex;
+}
+
+.not-visible{
+  display: none;
+}

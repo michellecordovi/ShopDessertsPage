@@ -1,4 +1,9 @@
-function OrderConfirmedModal({desserts, modalIsVisible, setModalIsVisible}) {
+function OrderConfirmedModal({desserts, modalIsVisible, setModalIsVisible, setCartItems}) {
+    function handleStartNewOrder(){
+        setModalIsVisible(false)
+        setCartItems([])
+    }
+
     return (
         <section className={!modalIsVisible ?"order-confirmation not-visible" : "order-confirmation visible"}>
             <div id="modal-background"></div>
@@ -12,7 +17,7 @@ function OrderConfirmedModal({desserts, modalIsVisible, setModalIsVisible}) {
 
                 <div id="order-confirmation-grid"></div>
 
-                <button id="start-new-order-button">Start New Order</button>
+                <button id="start-new-order-button" onClick={handleStartNewOrder}>Start New Order</button>
             </div>
         </section>
     )

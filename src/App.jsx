@@ -31,7 +31,7 @@ function App() {
     <>
       <DessertGrid desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} />
       <Cart desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} uniqueItems = {uniqueItems} setModalIsVisible={setModalIsVisible} />
-      <OrderConfirmedModal desserts={desserts} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible} />
+      <OrderConfirmedModal desserts={desserts} modalIsVisible={modalIsVisible} setModalIsVisible={setModalIsVisible} setCartItems={setCartItems} />
     </>
   )
 }
