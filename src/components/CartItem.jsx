@@ -12,8 +12,8 @@ function CartItem({ desserts, price, name, count, cartItems, setCartItems}) {
             <div className="cart-item-info">
                 <p>{name}</p>
                 <span>{count}x</span>
-                <span>@ {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)}</span>
-                <span>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(count * price)}</span>
+                <span className="cart-item-price">@ {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)}</span>
+                <span className="cart-item-total">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(count * price)}</span>
             </div>
 
             <button className="remove-cart-item-button" onClick={handleClick}>
