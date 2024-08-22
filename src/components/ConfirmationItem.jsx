@@ -7,7 +7,7 @@ function ConfirmationItem({ desserts, index, price, name, count}){
             <div className="confirmed-item-info">
                 <div className="confirmed-item-name-block">
                     <p>{name}</p>
-                    <span>{count}x</span>
+                    <span className="cart-item-count">{count}x</span>
                     <span className="cart-item-price">@ {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price)}</span>
                 </div>
 
