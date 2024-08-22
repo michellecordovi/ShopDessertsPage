@@ -93,9 +93,10 @@
   color:#87635A;
 }
 
-.dessert-name, .dessert-price{
+.dessert-name, .dessert-price, #confirm-order-button{
   font-size: 16px;
   font-weight: 500;
+  line-height: 150%;
 }
 
 .dessert-name {
@@ -118,6 +119,11 @@
   img{
     width: 128px;
   }
+
+  p{
+    color:#87635A;
+    font-weight: 500;
+  }
 }
 
 #active-cart {
@@ -134,19 +140,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.remove-cart-item-button{
-  border: 2px solid #CAAFA7;
-  padding-right: 0.5px;
-  background-color: white;
-  height: 20px;
-  width: 20px;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  p, .cart-item-count, .cart-item-total{
+    font-weight: 500;
+  }
+
+  .cart-item-count{
+    color:#C73B0F;
+    margin-right: 8px;
+  }
+
+  .cart-item-price {
+    margin-right: 8px;
+  }
+
+  .remove-cart-item-button{
+    border: 2px solid #CAAFA7;
+    padding-right: 0.5px;
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .remove-cart-item-button:hover{
+    border-color: #260F08;
+
+    svg path{
+      fill:#260F08;
+    }
+  }
 }
 
 #order-total{
@@ -182,6 +209,11 @@
   background-color: #C73B0F;
   color: white;
   cursor: pointer;
+}
+
+#confirm-order-button:hover, 
+#start-new-order-button:hover{
+  background-color:hsl(14, 86%, 25%);
 }
 
 
