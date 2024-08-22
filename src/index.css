@@ -9,7 +9,7 @@
 body{
   background-color: #FCF8F6;
   color: #260F08;
-  padding: 88px;
+  padding: 88px 0px;
   position: relative;
   font-size: 14px;
   line-height: 150%;
@@ -31,6 +31,8 @@ aside{
   height: fit-content;
   background-color: white;
   padding: 24px;
+  position: sticky;
+  top: 20px;
 }
 
 h1{
