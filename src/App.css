@@ -19,6 +19,10 @@
   border-radius: 8px;
 }
 
+.is-in-cart {
+  border: 3px solid #C73B0F;
+}
+
 .add-to-cart-button,
 .adjust-count-button {
   width: 160px;

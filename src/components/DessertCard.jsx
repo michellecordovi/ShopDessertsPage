@@ -21,7 +21,7 @@ function DessertCard({index, src, name, category, price, desserts, cartItems, se
     return (
         <div className="dessert-card">
             <div className="dessert-image-container">
-                <img className="dessert-image" src={src} alt={name} />
+                <img className={isInCart? "dessert-image is-in-cart" : "dessert-image"} src={src} alt={name} />
                 {!isInCart ? <AddToCartButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount} />
                 : <ItemCountButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount}  />  }
                 
