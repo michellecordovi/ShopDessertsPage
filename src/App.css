@@ -53,6 +53,9 @@
 }
 
 .add-to-cart-button{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: white;
   border: 1px solid #AD8A85;
   justify-content: center;
