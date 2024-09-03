@@ -46,10 +46,7 @@
   position: relative;
   bottom: 22px;
   cursor: pointer;
-
-  p{
-    font-weight: 600;
-  }
+  font-weight: 600;
 }
 
 .add-to-cart-button{
