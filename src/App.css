@@ -5,6 +5,17 @@
   column-gap: 24px;
 }
 
+@media only screen and (max-width: 740px){
+  #desserts-grid{
+    grid-template-columns: 2fr 2fr;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  #desserts-grid{
+    grid-template-columns: 1fr;
+  }
+}
 
 /* DESSERT CARD */
 .dessert-image-container{
@@ -25,7 +36,8 @@
 
 .add-to-cart-button,
 .adjust-count-button {
-  width: 160px;
+  max-width: 90%;
+  min-width: 65%;
   height: 44px;
   padding: 22px;
   display: flex;
@@ -108,6 +120,10 @@
 }
 
 /* CART */
+#cart{
+  border-radius: 12px;
+}
+
 #empty-cart-image-container{
   padding: 16px 0px;
   display: flex;
@@ -244,14 +260,14 @@
   width: 40%;
   height: fit-content;
   border-radius: 12px;
+  margin-top: 5rem;
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  top: 25vh;
-  bottom: 25vh;
-  position: relative;
   z-index: 2;
+  top: 5rem;
+  position: sticky;
 
   #order-confirmation-header{
     img{
@@ -279,7 +295,7 @@
 
 
 /* CONFIRMATION GRID */
-#order-confirmation-grid{
+.order-confirmation-grid{
   background-color: #FCF8F6;
   border-radius: 8px;
   padding: 8px 24px 24px;
@@ -323,4 +339,23 @@
 .confirmed-item-price{
   font-size: 16px;
   font-weight: 500;
+}
+
+
+@media only screen and (max-width: 1000px){
+  #order-confirmation-box{
+    width: 90%;
+    margin: 24px;
+  }
+}
+
+
+@media only screen and (max-width: 460px){
+  #order-confirmation-box{
+    width: 100%;
+    margin: 5rem 0px 0px;
+    padding: 24px;
+    bottom: 0vh;
+    top: 0%;
+  }
 }
