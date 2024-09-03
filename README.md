@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://github.com/michellecordovi/ShopDessertsPage)
-- Live Site URL: [](https://shop-desserts.netlify.app/)
+- Solution URL: [Github Repo](https://github.com/michellecordovi/ShopDessertsPage)
+- Live Site URL: [Dessert Shop Live Site](https://shop-desserts.netlify.app/)
 
 ## My process
 
