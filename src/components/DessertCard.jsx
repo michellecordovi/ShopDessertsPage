@@ -3,27 +3,64 @@ import AddToCartButton from "./AddToCartButton";
 import {useState, useEffect} from 'react'
 import ItemCountButton from "./ItemCountButton";
 
-function DessertCard({index, src, name, category, price, desserts, cartItems, setCartItems}) {
+function DessertCard({index, src, name, category, price, cartItems, setCartItems}) {
     const [isInCart, setIsInCart] = useState(false)
     const [itemCount, setItemCount]= useState(0)
 
-    useEffect( () => {
-        if(itemCount === 0){
-            setIsInCart(false)
-        }
+    //changes displayed button based on whether or not the item is already in the cart or not
+    useEffect(() => {
+    if (!cartItems.includes(index)) {
+        setItemCount(0);
+        setIsInCart(false);
+    }
+}, [cartItems, index]);
 
-        if(cartItems.includes(index) === false){
-            setItemCount(0)
-        }
 
-    }, [itemCount, cartItems, index])
+    //handles click event for AddToCart button
+    function handleClick(){
+        if(!isInCart){
+            setIsInCart(true);
+
+            setCartItems(prev => {
+                return [...prev, index]
+            })
+
+            setItemCount(itemCount + 1)
+        }
+    }
+
+    //handles decrement function for item that is already in cart
+    function handleDecrement(){
+        setItemCount(itemCount - 1)
+
+        setCartItems(prev => {
+            const arrIndex = prev.findLastIndex(num => num === index)
+
+            if(arrIndex !== -1){
+                const updatedCart = [...prev];
+                updatedCart.splice(arrIndex, 1)
+                return updatedCart;
+            }
+                
+            return prev;
+        })
+    }
+
+    //handles increment function for item that is already in cart
+    function handleIncrement(){
+        setItemCount(itemCount + 1)
+
+        setCartItems(prev => {
+            return [...prev, index]
+        })
+    }
 
     return (
-        <div className="dessert-card">
+        <div className="dessert-card" tabIndex={0}>
             <div className="dessert-image-container">
                 <img className={isInCart? "dessert-image is-in-cart" : "dessert-image"} src={src} alt={name} />
-                {!isInCart ? <AddToCartButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount} />
-                : <ItemCountButton setIsInCart={setIsInCart} isInCart={isInCart} index={index} desserts={desserts} cartItems={cartItems} setCartItems={setCartItems} itemCount={itemCount} setItemCount={setItemCount}  />  }
+                {!isInCart ? <AddToCartButton handleClick={handleClick} />
+                : <ItemCountButton handleDecrement={handleDecrement} handleIncrement={handleIncrement} itemCount={itemCount} />  }
                 
                 
             </div>
