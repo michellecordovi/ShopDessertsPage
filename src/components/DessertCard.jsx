@@ -56,7 +56,7 @@ function DessertCard({index, src, name, category, price, cartItems, setCartItems
     }
 
     return (
-        <div className="dessert-card" tabIndex={0}>
+        <div className="dessert-card">
             <div className="dessert-image-container">
                 <img className={isInCart? "dessert-image is-in-cart" : "dessert-image"} src={src} alt={name} />
                 {!isInCart ? <AddToCartButton handleClick={handleClick} />
